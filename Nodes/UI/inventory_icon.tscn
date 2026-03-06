@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqyncxpewebfu"]
+
+[ext_resource type="Texture2D" uid="uid://co4jmpm7h1kv4" path="res://Assets/Textures/UI/Inventory/TestSprites.png" id="1_mnec0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1wgg"]
+atlas = ExtResource("1_mnec0")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1ga5"]
+atlas = ExtResource("1_mnec0")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1ck6"]
+atlas = ExtResource("1_mnec0")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1plu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1wgg")
+}],
+"loop": true,
+"name": &"bat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1ga5")
+}],
+"loop": true,
+"name": &"medkit",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1ck6")
+}],
+"loop": true,
+"name": &"pistol",
+"speed": 5.0
+}]
+
+[node name="InventoryIcon" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_q1plu")
+animation = &"pistol"

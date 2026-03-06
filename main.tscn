@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dgjboy3253ur1" path="res://Assets/Textures/scaffolding.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://buycvjhrfnsko" path="res://Assets/Textures/wall.png" id="3_h2yge"]
+
+[sub_resource type="Gradient" id="Gradient_7dm0k"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5)
+colors = PackedColorArray(0.47058824, 0.3372549, 0.44313726, 1, 0.72156864, 0.62352943, 0.69411767, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ig7tw"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0xm2m"]
+height = 100
+noise = SubResource("FastNoiseLite_ig7tw")
+color_ramp = SubResource("Gradient_7dm0k")
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, 405.49997)
+scale = Vector2(1, 0.7699997)
+texture = SubResource("NoiseTexture2D_0xm2m")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-50, 372)
+scale = Vector2(0.025634745, 0.6899999)
+texture = SubResource("NoiseTexture2D_0xm2m")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-6.0624924, 339.49997)
+scale = Vector2(0.22680664, 0.20999995)
+texture = SubResource("NoiseTexture2D_0xm2m")
+
+[node name="Scaffolding" type="Sprite2D" parent="."]
+position = Vector2(-280, 385)
+texture = ExtResource("2_0xm2m")
+
+[node name="Wall" type="Sprite2D" parent="."]
+position = Vector2(-80, 359)
+texture = ExtResource("3_h2yge")
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(0, 392)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 392)
+zoom = Vector2(4, 4)

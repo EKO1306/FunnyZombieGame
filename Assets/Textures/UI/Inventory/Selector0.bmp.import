@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cjmvdyqg4q7qi"
+path="res://.godot/imported/Selector0.bmp-dec26842f4c50b2dbdf5e9d6050a3bce.res"
+
+[deps]
+
+source_file="res://Assets/Textures/UI/Inventory/Selector0.bmp"
+dest_files=["res://.godot/imported/Selector0.bmp-dec26842f4c50b2dbdf5e9d6050a3bce.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

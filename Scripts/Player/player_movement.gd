@@ -13,38 +13,37 @@ extends CharacterBody2D
 var stamina = _base_maxStamina
 var timeSinceRun := 0.0
 var staminaEmptied = false
+var isRunning = false
 
 func calcMovement(delta : float) -> void:
-	var xMove = Input.get_axis("move_left","move_right")
-	var yMove = Input.get_axis("move_up","move_down")
+	var moveAxis = Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down")).normalized()
 	
-	var isRunning = false
+	isRunning = false
 	if Input.is_action_pressed("run"):
 		if not staminaEmptied:
-			isRunning = true
-
+			if velocity.length() > _base_runSpeed * 0.5:
+				isRunning = true
+	
 	if isRunning:
 		stamina -= delta
 		timeSinceRun = 0.0
 		if stamina <= 0:
 			staminaEmptied = true
 			stamina = 0
-		velocity.x = move_toward(velocity.x, xMove * _base_runSpeed, delta * _base_walkAccelSpeed)
-		velocity.y = move_toward(velocity.y, yMove * _base_runSpeed, delta * _base_walkAccelSpeed)
+		velocity = velocity.move_toward(moveAxis * _base_runSpeed, delta * _base_walkAccelSpeed)
 	else:
 		timeSinceRun += delta
 		stamina += _base_staminaRegenMax * min(1.0, timeSinceRun / _base_maxSprintRegenTimeBoost) * delta
 		if stamina >= _base_maxStamina:
 			stamina = _base_maxStamina
 			staminaEmptied = false
-		velocity.x = move_toward(velocity.x, xMove * _base_walkSpeed, delta * _base_walkAccelSpeed)
-		velocity.y = move_toward(velocity.y, yMove * _base_walkSpeed, delta * _base_walkAccelSpeed)
+		velocity = velocity.move_toward(moveAxis * _base_walkSpeed, delta * _base_walkAccelSpeed)
 	if global_position.x <= get_global_mouse_position().x:
 		$Sprite.scale.x = 1.0
 	else:
 		$Sprite.scale.x = -1.0
 
-	move_and_slide()
+	calcCollisions()
 	
 	$UI/ProgressBar.max_value = _base_maxStamina
 	$UI/ProgressBar.value = stamina
@@ -52,3 +51,14 @@ func calcMovement(delta : float) -> void:
 		$UI/ProgressBar.modulate = Color.DARK_RED
 	else:
 		$UI/ProgressBar.modulate = Color.LIME
+
+func calcCollisions() -> void:
+	var prevVelocity = velocity
+	var collision = move_and_slide()
+	if collision:
+		collision = get_last_slide_collision()
+		var collObject = collision.get_collider()
+		if collObject.is_in_group("Zombie"):
+			if isRunning:
+				collObject.velocity = prevVelocity.normalized().rotated(deg_to_rad((randf_range(-45,45)))) * 32.0
+				collObject.staggerTime = 0.25

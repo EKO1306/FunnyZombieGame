@@ -1,44 +1,29 @@
-[gd_scene load_steps=60 format=3 uid="uid://ckudr8chj1kgo"]
+[gd_scene load_steps=45 format=3 uid="uid://bw1sjmvbram5u"]
 
-[ext_resource type="Script" uid="uid://bjqs81hfx5yuk" path="res://Scripts/Player/player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://cum1sy8n2fydo" path="res://Assets/Textures/Player/player_base.png" id="2_dw050"]
-[ext_resource type="Script" uid="uid://c4334e1xprt4i" path="res://Scripts/Player/player_sprite.gd" id="2_nvl01"]
-[ext_resource type="Texture2D" uid="uid://bd7b1waqruimc" path="res://Assets/Textures/UI/Inventory/Inventory.png" id="2_onrkg"]
-[ext_resource type="Texture2D" uid="uid://dxt7t5eqmv6s4" path="res://Assets/Textures/Player/goon.png" id="3_b26j0"]
-[ext_resource type="BitMap" uid="uid://cjmvdyqg4q7qi" path="res://Assets/Textures/UI/Inventory/Selector0.bmp" id="3_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://j0041rvcjrc3" path="res://Assets/Textures/Player/shirts.png" id="3_n7ghd"]
-[ext_resource type="Script" uid="uid://dfgvm5cumxjq2" path="res://Scripts/UI/selector.gd" id="4_2hs0m"]
-[ext_resource type="BitMap" uid="uid://bnnfvcvl5nbl" path="res://Assets/Textures/UI/Inventory/Selector1.bmp" id="4_sweqy"]
-[ext_resource type="BitMap" uid="uid://cb1nah3rl4xj3" path="res://Assets/Textures/UI/Inventory/Selector2.bmp" id="5_2hs0m"]
-[ext_resource type="Texture2D" uid="uid://chj508i2c2hcg" path="res://Assets/Textures/Player/trousers.png" id="5_ivps1"]
-[ext_resource type="Texture2D" uid="uid://cj51c0emka6o6" path="res://Assets/Textures/Player/hair.png" id="6_urp6f"]
-[ext_resource type="PackedScene" uid="uid://bqyncxpewebfu" path="res://Nodes/UI/inventory_icon.tscn" id="7_1jxqw"]
+[ext_resource type="Script" uid="uid://brq36h5keoy6k" path="res://Scripts/Zombie/zombie.gd" id="1_nr35g"]
+[ext_resource type="Texture2D" uid="uid://cum1sy8n2fydo" path="res://Assets/Textures/Player/player_base.png" id="2_8bcso"]
+[ext_resource type="Texture2D" uid="uid://j0041rvcjrc3" path="res://Assets/Textures/Player/shirts.png" id="3_hrauq"]
+[ext_resource type="Texture2D" uid="uid://chj508i2c2hcg" path="res://Assets/Textures/Player/trousers.png" id="4_0mvaa"]
+[ext_resource type="Texture2D" uid="uid://cj51c0emka6o6" path="res://Assets/Textures/Player/hair.png" id="5_4wcsx"]
+[ext_resource type="Texture2D" uid="uid://dxt7t5eqmv6s4" path="res://Assets/Textures/Player/goon.png" id="6_a6qer"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bwjto"]
-radius = 2.0
-height = 6.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_urp6f"]
-radius = 3.0
-height = 16.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
-atlas = ExtResource("2_dw050")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm3ck"]
+atlas = ExtResource("2_8bcso")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_op7ga"]
-atlas = ExtResource("3_n7ghd")
+atlas = ExtResource("3_hrauq")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q13i1"]
-atlas = ExtResource("3_n7ghd")
+atlas = ExtResource("3_hrauq")
 region = Rect2(16, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pylmc"]
-atlas = ExtResource("3_n7ghd")
+atlas = ExtResource("3_hrauq")
 region = Rect2(32, 32, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pbfsw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6e2t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -65,23 +50,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
-atlas = ExtResource("2_dw050")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy0qt"]
+atlas = ExtResource("2_8bcso")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1c27"]
-atlas = ExtResource("3_n7ghd")
+atlas = ExtResource("3_hrauq")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbfsw"]
-atlas = ExtResource("3_n7ghd")
+atlas = ExtResource("3_hrauq")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5tmop"]
-atlas = ExtResource("3_n7ghd")
+atlas = ExtResource("3_hrauq")
 region = Rect2(32, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7ahtn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ayk1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -108,23 +93,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
-atlas = ExtResource("2_dw050")
+[sub_resource type="AtlasTexture" id="AtlasTexture_svym3"]
+atlas = ExtResource("2_8bcso")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dx0e4"]
-atlas = ExtResource("5_ivps1")
+atlas = ExtResource("4_0mvaa")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jm5j8"]
-atlas = ExtResource("5_ivps1")
+atlas = ExtResource("4_0mvaa")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hik5"]
-atlas = ExtResource("5_ivps1")
+atlas = ExtResource("4_0mvaa")
 region = Rect2(32, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qtqh7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhw6s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -151,23 +136,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
-atlas = ExtResource("2_dw050")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijcqs"]
+atlas = ExtResource("2_8bcso")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtqh7"]
-atlas = ExtResource("5_ivps1")
+atlas = ExtResource("4_0mvaa")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wuci"]
-atlas = ExtResource("5_ivps1")
+atlas = ExtResource("4_0mvaa")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iruf7"]
-atlas = ExtResource("5_ivps1")
+atlas = ExtResource("4_0mvaa")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_j5n4i"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rjgyu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -194,23 +179,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
-atlas = ExtResource("2_dw050")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xdpr"]
+atlas = ExtResource("2_8bcso")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_606se"]
-atlas = ExtResource("3_n7ghd")
+atlas = ExtResource("3_hrauq")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ahtn"]
-atlas = ExtResource("3_n7ghd")
+atlas = ExtResource("3_hrauq")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7lmhl"]
-atlas = ExtResource("3_n7ghd")
+atlas = ExtResource("3_hrauq")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dx0e4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cj181"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -237,27 +222,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bwjto"]
-atlas = ExtResource("2_dw050")
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4ne0"]
+atlas = ExtResource("2_8bcso")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j5n4i"]
-atlas = ExtResource("6_urp6f")
+atlas = ExtResource("5_4wcsx")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_634y6"]
-atlas = ExtResource("6_urp6f")
+atlas = ExtResource("5_4wcsx")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efrwb"]
-atlas = ExtResource("6_urp6f")
+atlas = ExtResource("5_4wcsx")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hiqhm"]
-atlas = ExtResource("6_urp6f")
+atlas = ExtResource("5_4wcsx")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tkwlq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6w72l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -293,14 +278,14 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkwlq"]
-atlas = ExtResource("3_b26j0")
+atlas = ExtResource("6_a6qer")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hl5qd"]
-atlas = ExtResource("3_b26j0")
+atlas = ExtResource("6_a6qer")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ek41f"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxjm3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -438,60 +423,23 @@ _data = {
 &"RESET": SubResource("Animation_bwjto")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4flbx"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nr35g"]
+radius = 2.0
+height = 6.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onrkg"]
-bg_color = Color(1, 1, 1, 1)
-corner_detail = 1
+[node name="Zombie" type="CharacterBody2D" groups=["Zombie"]]
+motion_mode = 1
+script = ExtResource("1_nr35g")
 
-[sub_resource type="Theme" id="Theme_i3pqv"]
-ProgressBar/styles/background = SubResource("StyleBoxEmpty_4flbx")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_onrkg")
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+simplify_path = true
+simplify_epsilon = 8.0
+radius = 12.0
+neighbor_distance = 64.0
+max_speed = 4.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(0, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(0, 32, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(0, 64, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
-atlas = ExtResource("2_onrkg")
-region = Rect2(0, 96, 48, 32)
-
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_onrkg")
-inventorySelectorColor = Color(1, 1, 0, 0.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_bwjto")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -6)
-shape = SubResource("CapsuleShape2D_urp6f")
-
-[node name="Sprite" type="CanvasGroup" parent="." node_paths=PackedStringArray("hairSprites", "skinSprites", "shirtSprites", "trousersSprites")]
+[node name="Sprite" type="CanvasGroup" parent="."]
 position = Vector2(0, -7)
-script = ExtResource("2_nvl01")
-randomizePlayer = true
-playerSkinColor = 15
-playerHairColor = 9
-playerHairstyle = 3
-playerShirt = 1
-playerTrousers = 1
-hairSprites = [NodePath("head/hair")]
-skinSprites = [NodePath("head/skin"), NodePath("torso/skin"), NodePath("armLeft/skin"), NodePath("armLeft/forearmLeft/skin"), NodePath("armRight/skin"), NodePath("armRight/forearmRight/skin"), NodePath("thighLeft/skin"), NodePath("thighLeft/leg_left/skin"), NodePath("thighRight/skin"), NodePath("thighRight/legRight/skin")]
-shirtSprites = [NodePath("torso/shirt"), NodePath("armLeft/shirt"), NodePath("armLeft/forearmLeft/shirt"), NodePath("armRight/shirt"), NodePath("armRight/forearmRight/shirt")]
-trousersSprites = [NodePath("thighLeft/trousers"), NodePath("thighLeft/leg_left/trousers"), NodePath("thighRight/trousers"), NodePath("thighRight/legRight/trousers")]
 
 [node name="armLeft" type="Node2D" parent="Sprite"]
 modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
@@ -503,22 +451,24 @@ position = Vector2(0, 4)
 rotation = -1.3629822
 
 [node name="skin" type="Sprite2D" parent="Sprite/armLeft/forearmLeft"]
+modulate = Color(0.47657922, 0.57214785, 0.4834036, 1)
 show_behind_parent = true
-texture = SubResource("AtlasTexture_b26j0")
+texture = SubResource("AtlasTexture_lm3ck")
 offset = Vector2(0, 2)
 
 [node name="shirt" type="AnimatedSprite2D" parent="Sprite/armLeft/forearmLeft"]
 show_behind_parent = true
-sprite_frames = SubResource("SpriteFrames_pbfsw")
+sprite_frames = SubResource("SpriteFrames_k6e2t")
 animation = &"1"
 offset = Vector2(0, 2)
 
 [node name="skin" type="Sprite2D" parent="Sprite/armLeft"]
-texture = SubResource("AtlasTexture_n7ghd")
+modulate = Color(0.47657922, 0.57214785, 0.4834036, 1)
+texture = SubResource("AtlasTexture_dy0qt")
 offset = Vector2(0, 2)
 
 [node name="shirt" type="AnimatedSprite2D" parent="Sprite/armLeft"]
-sprite_frames = SubResource("SpriteFrames_7ahtn")
+sprite_frames = SubResource("SpriteFrames_6ayk1")
 animation = &"1"
 offset = Vector2(0, 2)
 
@@ -530,43 +480,47 @@ position = Vector2(1, 2)
 position = Vector2(0, 7)
 
 [node name="skin" type="Sprite2D" parent="Sprite/thighLeft/leg_left"]
+modulate = Color(0.47657922, 0.57214785, 0.4834036, 1)
 show_behind_parent = true
-texture = SubResource("AtlasTexture_nvl01")
+texture = SubResource("AtlasTexture_svym3")
 offset = Vector2(0, 2)
 
 [node name="trousers" type="AnimatedSprite2D" parent="Sprite/thighLeft/leg_left"]
 show_behind_parent = true
-sprite_frames = SubResource("SpriteFrames_qtqh7")
+sprite_frames = SubResource("SpriteFrames_uhw6s")
 animation = &"1"
 offset = Vector2(0, 2)
 
 [node name="skin" type="Sprite2D" parent="Sprite/thighLeft"]
-texture = SubResource("AtlasTexture_ivps1")
+modulate = Color(0.47657922, 0.57214785, 0.4834036, 1)
+texture = SubResource("AtlasTexture_ijcqs")
 offset = Vector2(0, 3)
 
 [node name="trousers" type="AnimatedSprite2D" parent="Sprite/thighLeft"]
-sprite_frames = SubResource("SpriteFrames_j5n4i")
+sprite_frames = SubResource("SpriteFrames_rjgyu")
 animation = &"1"
 offset = Vector2(0, 3)
 
 [node name="torso" type="Node2D" parent="Sprite"]
 
 [node name="skin" type="Sprite2D" parent="Sprite/torso"]
-texture = SubResource("AtlasTexture_urp6f")
+modulate = Color(0.47657922, 0.57214785, 0.4834036, 1)
+texture = SubResource("AtlasTexture_6xdpr")
 
 [node name="shirt" type="AnimatedSprite2D" parent="Sprite/torso"]
-sprite_frames = SubResource("SpriteFrames_dx0e4")
+sprite_frames = SubResource("SpriteFrames_cj181")
 animation = &"1"
 
 [node name="head" type="Node2D" parent="Sprite"]
 position = Vector2(0, -6)
 
 [node name="skin" type="Sprite2D" parent="Sprite/head"]
-texture = SubResource("AtlasTexture_bwjto")
+modulate = Color(0.47657922, 0.57214785, 0.4834036, 1)
+texture = SubResource("AtlasTexture_r4ne0")
 offset = Vector2(0, -1)
 
 [node name="hair" type="AnimatedSprite2D" parent="Sprite/head"]
-sprite_frames = SubResource("SpriteFrames_tkwlq")
+sprite_frames = SubResource("SpriteFrames_6w72l")
 animation = &"0"
 offset = Vector2(0, -1)
 
@@ -577,23 +531,24 @@ position = Vector2(-1, 2)
 position = Vector2(0, 7)
 
 [node name="skin" type="Sprite2D" parent="Sprite/thighRight/legRight"]
+modulate = Color(0.47657922, 0.57214785, 0.4834036, 1)
 show_behind_parent = true
-texture = SubResource("AtlasTexture_nvl01")
+texture = SubResource("AtlasTexture_svym3")
 offset = Vector2(0, 2)
 
 [node name="trousers" type="AnimatedSprite2D" parent="Sprite/thighRight/legRight"]
 show_behind_parent = true
-sprite_frames = SubResource("SpriteFrames_qtqh7")
+sprite_frames = SubResource("SpriteFrames_uhw6s")
 animation = &"1"
 offset = Vector2(0, 2)
 
 [node name="skin" type="Sprite2D" parent="Sprite/thighRight"]
-modulate = Color(0.9063318, 0.9063318, 0.9063318, 1)
-texture = SubResource("AtlasTexture_ivps1")
+modulate = Color(0.47657922, 0.57214785, 0.4834036, 1)
+texture = SubResource("AtlasTexture_ijcqs")
 offset = Vector2(0, 3)
 
 [node name="trousers" type="AnimatedSprite2D" parent="Sprite/thighRight"]
-sprite_frames = SubResource("SpriteFrames_j5n4i")
+sprite_frames = SubResource("SpriteFrames_rjgyu")
 animation = &"1"
 offset = Vector2(0, 3)
 
@@ -609,27 +564,29 @@ rotation = -1.2182764
 position = Vector2(-0.50190973, 8.957563)
 rotation = 1.7889625
 scale = Vector2(0.99999994, 0.99999994)
-sprite_frames = SubResource("SpriteFrames_ek41f")
+sprite_frames = SubResource("SpriteFrames_kxjm3")
 animation = &"none"
 
 [node name="skin" type="Sprite2D" parent="Sprite/armRight/forearmRight"]
+modulate = Color(0.47657922, 0.57214785, 0.4834036, 1)
 scale = Vector2(0.99999994, 0.99999994)
-texture = SubResource("AtlasTexture_b26j0")
+texture = SubResource("AtlasTexture_lm3ck")
 offset = Vector2(0, 2)
 
 [node name="shirt" type="AnimatedSprite2D" parent="Sprite/armRight/forearmRight"]
 position = Vector2(0, -2.3841858e-07)
-sprite_frames = SubResource("SpriteFrames_pbfsw")
+sprite_frames = SubResource("SpriteFrames_k6e2t")
 animation = &"1"
 offset = Vector2(0, 2)
 
 [node name="skin" type="Sprite2D" parent="Sprite/armRight"]
+modulate = Color(0.47657922, 0.57214785, 0.4834036, 1)
 scale = Vector2(0.99999994, 0.99999994)
-texture = SubResource("AtlasTexture_n7ghd")
+texture = SubResource("AtlasTexture_dy0qt")
 offset = Vector2(0, 2)
 
 [node name="shirt" type="AnimatedSprite2D" parent="Sprite/armRight"]
-sprite_frames = SubResource("SpriteFrames_7ahtn")
+sprite_frames = SubResource("SpriteFrames_6ayk1")
 animation = &"1"
 offset = Vector2(0, 2)
 
@@ -638,91 +595,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_606se")
 }
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ProgressBar" type="ProgressBar" parent="UI"]
-layout_mode = 0
-offset_left = -10.0
-offset_top = 9.0
-offset_right = 10.0
-offset_bottom = 13.0
-theme = SubResource("Theme_i3pqv")
-max_value = 1.0
-step = 0.0
-value = 0.5
-show_percentage = false
-
-[node name="InventoryWheel" type="Sprite2D" parent="UI"]
-position = Vector2(0, -40)
-texture = SubResource("AtlasTexture_onrkg")
-
-[node name="Selectors" type="Control" parent="UI/InventoryWheel"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -16.0
-offset_right = -24.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Selector0" type="TextureButton" parent="UI/InventoryWheel/Selectors"]
-modulate = Color(1, 1, 1, 0.6)
-z_index = 2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_2hs0m")
-texture_click_mask = ExtResource("3_i3pqv")
-script = ExtResource("4_2hs0m")
-
-[node name="Selector1" type="TextureButton" parent="UI/InventoryWheel/Selectors"]
-modulate = Color(1, 1, 1, 0.6)
-z_index = 2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_1jxqw")
-texture_click_mask = ExtResource("4_sweqy")
-script = ExtResource("4_2hs0m")
-selectorNo = 1
-
-[node name="Selector2" type="TextureButton" parent="UI/InventoryWheel/Selectors"]
-modulate = Color(1, 1, 1, 0.6)
-z_index = 2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = SubResource("AtlasTexture_dw050")
-texture_click_mask = ExtResource("5_2hs0m")
-script = ExtResource("4_2hs0m")
-selectorNo = 2
-
-[node name="InventoryIcon0" parent="UI/InventoryWheel" instance=ExtResource("7_1jxqw")]
-position = Vector2(-14, 9)
-animation = &"bat"
-
-[node name="InventoryIcon1" parent="UI/InventoryWheel" instance=ExtResource("7_1jxqw")]
-position = Vector2(-7.6293945e-06, 1)
-rotation = 0.7853982
-scale = Vector2(0.99999994, 0.99999994)
-animation = &"medkit"
-
-[node name="InventoryIcon2" parent="UI/InventoryWheel" instance=ExtResource("7_1jxqw")]
-position = Vector2(14, 9)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
 rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nr35g")

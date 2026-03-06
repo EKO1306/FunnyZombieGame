@@ -6,8 +6,12 @@ extends "player_movement.gd"
 @onready var inventoryNode := $UI/InventoryWheel
 var currentSlot := -1
 
-func updateInventory(_delta : float):
+func updateInventory(delta : float):
 	updateSelection()
+	if get_global_mouse_position().distance_to(inventoryNode.global_position) < 64.0:
+		inventoryNode.modulate.a = move_toward(inventoryNode.modulate.a, 1.0, delta * 12.0)
+	else:
+		inventoryNode.modulate.a = move_toward(inventoryNode.modulate.a, 0.0, delta * 4.0)
 
 func updateSelection() -> void:
 	var finalSelect
@@ -33,6 +37,7 @@ func selectSlot(item : int):
 	if currentSlot == item:
 		return
 	currentSlot = item
+	inventoryNode.modulate.a = 1.0
 	var no := -1
 	for i in inventoryNode.get_node("Selectors").get_children():
 		no += 1

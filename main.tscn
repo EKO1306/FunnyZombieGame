@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=9 format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dgjboy3253ur1" path="res://Assets/Textures/scaffolding.png" id="2_0xm2m"]
@@ -17,19 +17,32 @@ height = 100
 noise = SubResource("FastNoiseLite_ig7tw")
 color_ramp = SubResource("Gradient_7dm0k")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h2yge"]
+normal = Vector2(0, 1)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_h2yge"]
+vertices = PackedVector2Array(257, 440, -247, 440, -247, 371, 257, 371)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-251, 367, 261, 367, 261, 444, -251, 444)])
+agent_radius = 4.0
+
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
 position = Vector2(5, 405.49997)
 scale = Vector2(1, 0.7699997)
 texture = SubResource("NoiseTexture2D_0xm2m")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -5
 position = Vector2(-50, 372)
 scale = Vector2(0.025634745, 0.6899999)
 texture = SubResource("NoiseTexture2D_0xm2m")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -5
 position = Vector2(-6.0624924, 339.49997)
 scale = Vector2(0.22680664, 0.20999995)
 texture = SubResource("NoiseTexture2D_0xm2m")
@@ -39,6 +52,7 @@ position = Vector2(-280, 385)
 texture = ExtResource("2_0xm2m")
 
 [node name="Wall" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-80, 359)
 texture = ExtResource("3_h2yge")
 
@@ -48,3 +62,19 @@ position = Vector2(0, 392)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 392)
 zoom = Vector2(4, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 367)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_h2yge")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, 444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_h2yge")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_h2yge")
